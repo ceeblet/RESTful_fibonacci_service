@@ -1,11 +1,12 @@
 from flask import Flask, jsonify, request
+from flask import render_template
 
 app = Flask(__name__)
 
 
 @app.route('/')
 def index():
-    return "hello"
+    return render_template("index.html")
 
 
 @app.route("/fibonacci")
@@ -14,7 +15,8 @@ def fib_list():
         range_num = int(request.args.get('num'))
         if range_num > 1:
             myfib_list = fib(range_num)
-            return jsonify(myfib_list)
+            # return jsonify(myfib_list)
+            return render_template("fib.html", display_range_num=range_num, fibonacci_list=myfib_list)
         else:
             return "Not a valid number"
 
