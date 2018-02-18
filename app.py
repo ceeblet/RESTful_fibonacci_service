@@ -10,7 +10,7 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/fibonacci")
+@app.route('/fibonacci')
 def fib_list():
     if 'num' in request.args:
         try:
