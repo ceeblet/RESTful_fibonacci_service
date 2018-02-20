@@ -16,19 +16,18 @@ def fib_list():
         try:
             range_num = int(request.args.get('num'))
         except ValueError:
-            response = 'range not satisfiable'
-            return response, status.HTTP_416_REQUESTED_RANGE_NOT_SATISFIABLE
+            response = 'please submit a positive integer'
+            return response, status.HTTP_403_FORBIDDEN
         if range_num > 1:
             myfib_list = fib(range_num)
             # return jsonify(myfib_list)
             return render_template("fib.html", display_range_num=range_num, fibonacci_list=myfib_list)
         elif range_num < 1:
-            response = 'range not satisfiable'
-            return response, status.HTTP_416_REQUESTED_RANGE_NOT_SATISFIABLE
-        elif not range_num:
-            # return "Not a valid range number"
-            response = 'No input data provided'
-            return response, status.HTTP_400_BAD_REQUEST
+            response = 'improper data provided'
+            return response, status.HTTP_403_FORBIDDEN
+    else:
+        response = 'No input data provided'
+        return response, status.HTTP_403_FORBIDDEN
 
 
 def fib(n):
