@@ -1,7 +1,7 @@
 
-class fibonacci(self):
+class fibonacci():
 
-    def fib(n):
+    def fibonacci(n):
         fib_list = [0]
         a,b = 1,1
         fib_list.append(a)
@@ -10,6 +10,3 @@ class fibonacci(self):
             fib_list.append(a)
             #print(a)
         return fib_list
-
-if __name__ == '__main__':
-    print(fib(5))
