@@ -1,17 +1,19 @@
 import unittest
-
 from app import fibonacci
 
 
 class test_fibonacci(unittest.TestCase):
-	def test_1(self):
+	def test_min(self):
 		self.assertEqual(fibonacci.fibonacci(1), [0])
 
 	def test_2(self):
 		self.assertEqual(fibonacci.fibonacci(2), [0, 1])
 
-	def test_3(self):
-		self.assertEqual(fibonacci.fibonacci(3), [0, 1, 1])
+	def test_5(self):
+		self.assertEqual(fibonacci.fibonacci(5), [0, 1, 1, 2, 3])
+
+	# def test_max(self):
+	# 	self.assertEqual(fibonacci.fibonacci(10000), [0, 1, 1, 2, 3])
 
 	# def test_negative(self):
 	# 	self.assertRaisesRegexp(ValueError, "less than one", fibonacci.fibonacci, -1)
