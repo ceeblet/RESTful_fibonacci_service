@@ -1,9 +1,9 @@
-from fibonacci import fibonacci
-from flask import Flask, request
-from flask import render_template
-from static import status
+from flask import render_template, request
 
-app = Flask(__name__)
+from app import app
+# from app.fibonacci import fibonacci
+from app import fibonacci
+from static import status
 
 
 @app.route('/')
@@ -22,25 +22,13 @@ def fib_list():
         if range_num < 1 or range_num > 10000:
             response = 'improper data provided'
             return response, status.HTTP_403_FORBIDDEN
-        if range_num > 1:
+        if range_num >= 1:
             myfib_list = fibonacci.fibonacci(range_num)
-        # return jsonify(myfib_list)
             return render_template("fibonacci.html", display_range_num=range_num, fibonacci_list=myfib_list)
     else:
         response = 'Improper request'
         return response, status.HTTP_400_BAD_REQUEST
 
 
-# def fib(n):
-#     fib_list = [0]
-#     a,b = 1,1
-#     fib_list.append(a)
-#     for i in range(n-2):
-#         a,b = b,a+b
-#         fib_list.append(a)
-#         #print(a)
-#     return fib_list
-
-
-if __name__ == '__main__':
-    app.run(debug=True)
+# if __name__ == '__main__':
+#     app.run(debug=True)
