@@ -1,8 +1,6 @@
-from flask import render_template, request
-
 from app import app
-# from app.fibonacci import fibonacci
 from app import fibonacci
+from flask import render_template, request
 from static import status
 
 
@@ -29,6 +27,3 @@ def fib_list():
         response = 'Improper request'
         return response, status.HTTP_400_BAD_REQUEST
 
-
-# if __name__ == '__main__':
-#     app.run(debug=True)
