@@ -2,4 +2,4 @@
 # -*- coding: utf-8 -*-
 from fib import app
 
-app.run(debug=True)
+app.run()
