@@ -1,8 +1,9 @@
 from app import app
-from app import fibonacci
+from app.fibonacci import Fibonacci
 from flask import render_template, request
 from static import status
 
+fib = Fibonacci()
 
 @app.route('/')
 def index():
@@ -17,11 +18,11 @@ def fib_list():
         except ValueError:
             response = 'please submit only a positive integer, no special characters.'
             return response, status.HTTP_403_FORBIDDEN
-        if range_num < 1 or range_num > 10000:
+        if range_num < 0 or range_num > 10000:
             response = 'improper data provided'
             return response, status.HTTP_403_FORBIDDEN
-        if range_num >= 1:
-            myfib_list = fibonacci.fibonacci(range_num)
+        if range_num >= 0:
+            myfib_list = fib.fibonacci(range_num)
             return render_template("fibonacci.html", display_range_num=range_num, fibonacci_list=myfib_list)
     else:
         response = 'Improper request'
