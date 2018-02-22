@@ -1,7 +1,7 @@
-from app import app
-from app.fibonacci import Fibonacci
+from fib import app
+from fib.fibonacci import Fibonacci
 from flask import render_template, request
-from static import status
+from fib.static import status
 
 fib = Fibonacci()
 
