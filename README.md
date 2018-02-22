@@ -2,6 +2,7 @@
 a wee RESTful fibonacci web service
 
 This web service accepts a number, n, as input and returns the first n Fibonacci numbers, starting from 0
+
 For example:
 An input of 5 will return ```[0,1,1,2,3]```
 
