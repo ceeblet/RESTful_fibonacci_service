@@ -142,7 +142,7 @@ pip-selfcheck.json
 
 # workspace files are user-specific
 *.sublime-workspace
-*.workspace.xml
+.idea/workspace.xml
 
 # project files should be checked into the repository, unless a significant
 # proportion of contributors will probably not be using SublimeText
