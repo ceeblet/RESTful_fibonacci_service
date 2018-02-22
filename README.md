@@ -10,6 +10,7 @@ An input of 5 will return ```[0,1,1,2,3]```
 It is best to perform the following commands in a virtual environment. 
 This service uses python >=3.4
 
+Refer to the following web page for instructions on setting up a virtual environment in python 3
 https://docs.python.org/3/library/venv.html
 
 - create a directory to install into
