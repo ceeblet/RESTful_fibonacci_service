@@ -141,6 +141,7 @@ pip-selfcheck.json
 *.stTheme.cache
 
 # workspace files are user-specific
+.idea
 *.sublime-workspace
 .idea/workspace.xml
 
